@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+:root {
+  --background-color: #1c1b20;
+  --square-color: #131316;
+  --shadow-color: rgba(86, 2, 86, 0.509);
+  --color: white;
+  --second-color: whitesmoke;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--color);
+  font-family: 'League Gothic', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--background-color);
+}
+
+.navbar-brand {
+  margin-top: 3rem;
+  font-size: 80px;
+
+  color: white;
+  text-decoration: none;
+}
+
+/* Artists part */
+.col {
+  float: none;
+    margin: 0 auto;
+}
+
+.artists {
+  margin: 5rem 0 5rem 0;
+}
+
+.square {
+  margin: 0 1rem 4rem 1rem;
+  width: 12rem;
+  height: 12rem;
+  /* 3D */
+  perspective: 1000px;
+  /* Glowing effect (Dropshadow) */
+  animation: glowAnim 3s ease-in-out infinite;
+}
+
+.square img {
+  width: 11rem;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+}
+
+.square-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.square:hover .square-inner {
+  transform: rotateY(180deg);
+}
+
+.square-front,
+.square-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.square-front {
+  border-radius: 20px;
+  background: var(--square-color);
+  color: black;
+}
+
+.square-front img {
+  width: 11rem;
+}
+
+.square-back {
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--square-color);
+  color: #a8a7a7;
+  transform: rotateY(180deg);
+}
+
+.artist_name {
+  margin: 12px 0 12px 0.8rem;
+  color: var(--color);
+  float: left;
+}
+/* Social media (back of square) */
+.social_media {
+  list-style-type: none;
+  padding: 0;
+  position: fixed;
+  bottom: 0;
+  margin: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color) !important;
+}
+
+
+/* Color of icon */
+.bi {
+  font-size: 1.6rem;
+  margin-right: 5px;
+
+  background-color: purple;
+
+  background-image: linear-gradient(25deg, rgb(255, 0, 255), rgb(64, 0, 64));
+
+  background-size: 100%;
+  background-repeat: repeat;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.instagram {
+  float: left;
+  color: white;
+  font-size: 1.3rem;
+  bottom: 0;
+  margin: 0 3rem 0 0;
+}
+
+.sound_cloud {
+  float: left;
+  color: white;
+  font-size: 1.3rem;
+}
+
+/* Media // Animations */
+@keyframes glowAnim {
+  0% {
+    filter: drop-shadow(0 0 0.2rem var(--shadow-color));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 0.7rem var(--shadow-color));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 0.2rem var(--shadow-color));
+  }
+}
