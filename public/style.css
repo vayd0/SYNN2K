@@ -155,7 +155,15 @@ a {
 }
 
 /* Media // Animations */
-@media (max-width : 750px) {
+
+@media (max-width : 950px) {
+  .bi {
+    font-size: 1.6rem;
+    margin-right: 5px;
+  
+    color:var(--color) !important;
+  }
+
   .col-md-2 {
     display: flex;
     justify-content: center;
